@@ -5,14 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>App Landing</title>
 
-    <!--Tainwind and DaisyUI CDN -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/daisyui@4.6.0/dist/full.min.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
-
     <!-- font awesome -->
     <link
       rel="stylesheet"
@@ -21,16 +13,58 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
+    <!--Tainwind and DaisyUI CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.6.0/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
   <body>
     <head>
-      <nav class="bg-blue-950 flex items-center text-white px-44 h-20">
-        <div>
+      <nav
+        class="bg-blue-950 flex md:justify-between items-center text-white lg:px-44 h-20"
+      >
+        <!-- burger menu -->
+        <div class="dropdown lg:hidden">
+          <div tabindex="0" role="button" class="btn btn-ghost">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h8m-8 6h16"
+              />
+            </svg>
+          </div>
+          <ul
+            tabindex="0"
+            class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+          >
+            <li><a href="http://">Home</a></li>
+            <li><a href="http://">About</a></li>
+            <li><a href="http://">Service</a></li>
+            <li><a href="http://">Blog</a></li>
+            <li><a href="http://">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- logo -->
+        <div class="">
           <img src="assets/logo-3.png" alt="" />
         </div>
 
-        <div class="pl-12 flex-1">
+        <!-- menu bar -->
+        <div class="hidden lg:pl-12 lg:flex">
           <ul class="flex gap-3">
             <li><a href="http://">Home</a></li>
             <li><a href="http://">About</a></li>
@@ -40,6 +74,7 @@
           </ul>
         </div>
 
+        <!-- button -->
         <div>
           <button class="btn btn-ghost">Login</button>
           <button class="btn btn-error text-white">Get Started</button>
